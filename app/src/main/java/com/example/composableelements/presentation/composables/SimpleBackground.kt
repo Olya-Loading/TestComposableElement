@@ -86,17 +86,11 @@ fun SampleBackgroundWithImage(title: String, textButton: String, onClickButton:(
                 .fillMaxSize()
                 .background(Color.White, RoundedCornerShape(topStart = 40.dp, topEnd = 40.dp))
         ) {
-            Spacer(Modifier.weight(1f))
-            Box(modifier = Modifier.fillMaxWidth()){
-                Image(painter = painterResource(R.drawable.image_with_flowers), contentDescription = "", modifier = Modifier.fillMaxWidth(), contentScale = ContentScale.FillWidth)
-                SimpleBlueButton(textButton, ) {onClickButton }
-
-
-
-            }
-
-
         }
+    }
+
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter){
+        Image(painter = painterResource(R.drawable.image_with_flowers), contentDescription = "", modifier = Modifier.fillMaxWidth(), contentScale = ContentScale.FillWidth)
     }
 }
 
