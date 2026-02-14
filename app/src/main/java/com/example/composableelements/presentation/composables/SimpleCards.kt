@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,7 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composableelements.R
 import com.example.composableelements.ui.theme.ComposableElementsTheme
-import com.example.composableelements.ui.theme.blue
+import com.example.composableelements.ui.theme.LightViolet
+
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -71,10 +73,10 @@ fun CardOfPoint(image: Int, name: String, point: String) {
 
 @Composable
 fun CardGame(image:Int, title:String) {
-    Box(modifier = Modifier.width(157.dp).height(131.dp).background(blue, RoundedCornerShape(11.dp))){
+    Box(modifier = Modifier.width(157.dp).height(131.dp).background(LightViolet, RoundedCornerShape(11.dp))){
         Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
             Image(painter = painterResource(image), contentDescription = "", modifier = Modifier.width(92.dp).height(75.dp) )
-            Text(text = title, color = Color.Gray, fontSize = 13.sp)
+            Text(text = title, color = Color.Gray, style = MaterialTheme.typography.bodyMedium)
         }
     }
 }
@@ -82,5 +84,5 @@ fun CardGame(image:Int, title:String) {
 @Preview
 @Composable
 private fun p() {
-    ComposableElementsTheme { CardGame(R.drawable.bear, "Guess the animal") }
+    ComposableElementsTheme { TextFieldWithVerification("")}
 }
